@@ -18,7 +18,7 @@ const Wrapper = styled.section<any>`
   background-color: #effff1;
   ${({ theme }) => theme.mq.lg`
   margin: 100px 0 0 0;
-  height: 90vh;
+  min-height: 70vh;
 `}
 `;
 
@@ -55,7 +55,7 @@ const HeaderTextSection = styled.div<any>`
   flex-direction: column;
 `;
 const HeroImage = styled.img<any>`
-  width: 130%;
+  width: 140%;
   height: 115%;
   object-fit: cover;
   // object-position: right;
