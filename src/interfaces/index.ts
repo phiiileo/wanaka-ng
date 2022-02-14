@@ -1,0 +1,11 @@
+// export * from './atoms.interfaces';
+// export * from './auth.interfaces';
+// export * from './form.interfaces';
+export * from './general.interface';
+// export * from './investment.interfaces';
+// export * from './page.interfaces';
+// export * from './request.interfaces';
+// export * from './table.interfaces';
+// export * from './user.interfaces';
+// export * from './payment.interfaces';
+export * from './app.state.interfaces';
