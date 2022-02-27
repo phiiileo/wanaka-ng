@@ -18,6 +18,7 @@ import {
 import image from './../../../assets/images/form-image.png';
 import { validateObjectData } from '../../../utils';
 import { FinishWaitlistSignupAction } from '../../../redux/actions';
+import { OPENMODAL, OPENSUCCESSMODAL } from '../../../redux/types';
 export const WaitlistForm = (props: any): JSX.Element => {
   console.log(props.data);
   const dispatch = useDispatch();
@@ -62,6 +63,10 @@ export const WaitlistForm = (props: any): JSX.Element => {
       console.log(data);
       alert.success(data.message);
       dispatch(FinishWaitlistSignupAction('close'));
+      dispatch({
+        type: OPENMODAL,
+        component: OPENSUCCESSMODAL,
+      });
       navigatePage('referral-section');
     });
   };

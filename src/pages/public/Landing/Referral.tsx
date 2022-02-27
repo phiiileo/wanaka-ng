@@ -13,7 +13,7 @@ const Wrapper = styled.section`
   min-height: 50vh;
   width: 100%;
   padding: 0% 8%;
-  margin: 10px auto 50px auto;
+  margin: 50px auto 50px auto;
 `;
 const ReferralSubtitle = styled.div<any>`
   text-align: center;
@@ -21,35 +21,41 @@ const ReferralSubtitle = styled.div<any>`
 const ReferralSubtitleHeader = styled.div<any>`
   font-size: 20px;
   width: 60%;
+  color: #1a301d;
   margin: 50px auto 20px auto;
-  font-weight: 800;
+  font-weight: 600;
   ${({ theme }) => theme.mq.lg`
-  font-size: 30px;
+  font-size: 15px;
   `}
 `;
 const ReferralSubtitleText = styled.div<any>`
-  font-size: 18px;
-  width: 60%;
+  font-size: 15px;
+  width: 70%;
   margin: 0 auto 50px auto;
-  font-weight: 800;
+  font-weight: 600;
 `;
 const SectionTitle = styled.h1<any>`
   text-align: center;
-  font-size: 20px;
+  font-size: 30px;
   margin: 10px 0;
+  font-weight: 700;
 `;
 
 const ReferralLink = styled.div<any>`
   flex-direction: column;
   border-radius: 8px;
+  margin-top: 100px;
 `;
 
 const ReferralLinkTitle = styled.h3<any>`
-  font-weight: 900;
+  font-weight: 800;
+  text-align: center;
+  font-size: 30px;
 `;
 const ReferralLinkText = styled.p<any>`
   font-weight: 600;
   margin: 20px 0;
+  text-align: center;
 `;
 
 const ReferralLinkContainerWrapper = styled.span<any>`
@@ -57,14 +63,14 @@ const ReferralLinkContainerWrapper = styled.span<any>`
   flex-direction: column;
   ${({ theme }) => theme.mq.lg`
   justify-content: space-between;
-  flex-direction: row;
+  flex-direction: column;
   `}
   align-items: center;
 `;
 
 const ReferralLinkContainer = styled.div<any>`
   font-weight: 600;
-  // margin: 10px 0;
+  margin: 40px 0 60px 0;
   background-color: #eff1f0;
   padding: 20px;
   border-radius: 8px;
@@ -121,15 +127,25 @@ const Referral = (): JSX.Element => {
     { id: 3, content: 'Learn how to make your favourite meals and get the ingredients with recipes', icon: 'xxx' },
     { id: 4, content: 'Develop a healthy eating habit and keep the body strong', icon: 'xxx' },
   ];
+
+  function copyToClipboard(text: string) {
+    // const elem = document.createElement('textarea');
+    // elem.value = text;
+    // document.body.appendChild(elem);
+    // elem.select();
+    // document.execCommand('copy');
+    // document.body.removeChild(elem);
+    navigator.clipboard.writeText(text);
+  }
   return (
     <Wrapper className="referral-section">
       <SectionTitle>Sharing Love this Season</SectionTitle>
       <ReferralSubtitle>
         <ReferralSubtitleHeader>
-          We are giving three lucky people NGN 5000 worth of groceries and 15% off your first order{' '}
+          Enjoy NGN 5000 worth of groceries and a free delivery on your first order{' '}
         </ReferralSubtitleHeader>
         <ReferralSubtitleText>
-          Refer as many friends as you can and stand a chance to win, if you are among our top three referrers
+          Refer as many friends as you can and view your rank on our leaderboard weekly.
         </ReferralSubtitleText>
       </ReferralSubtitle>
       <ReferralLink>
@@ -144,7 +160,11 @@ const Referral = (): JSX.Element => {
                 <span>
                   {location.origin}?referral={rawData.response.data.code}
                 </span>
-                <ReferralLinkTextButton>Copy Link</ReferralLinkTextButton>
+                <ReferralLinkTextButton
+                  onClick={() => copyToClipboard(`${location.origin}?referral=${rawData.response.data.code}`)}
+                >
+                  Copy Link
+                </ReferralLinkTextButton>
               </ReferralLinkContainer>
               <ReferralLinkIconWrapper>
                 <div>

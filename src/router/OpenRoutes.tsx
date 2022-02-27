@@ -2,6 +2,7 @@ import React, { lazy } from 'react';
 import { Route } from 'react-router-dom';
 import { AppRoute } from '../interfaces/general.interface';
 import Landing from '../pages/public/Landing';
+import LeaderBoard from '../pages/public/LeaderBoard';
 import NotFound from '../pages/public/NotFound';
 import { RoutePaths } from './routes';
 
@@ -16,6 +17,12 @@ export const openRoutes: AppRoute[] = [
     name: 'Not found',
     path: RoutePaths.NOT_FOUND,
     component: <NotFound />,
+    // component: lazy(() => import('../pages/public/NotFound')),
+  },
+  {
+    name: 'Leaderboard',
+    path: RoutePaths.LEADERBOARD,
+    component: <LeaderBoard />,
     // component: lazy(() => import('../pages/public/NotFound')),
   },
 ];

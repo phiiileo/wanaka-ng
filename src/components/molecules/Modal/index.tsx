@@ -6,9 +6,10 @@ import { IComponent } from '../../../interfaces';
 import { ADDPACKAGESUCCESSFUL } from '../../../redux/types/package.types';
 import { CloseIcon } from '../../icons';
 import { WaitlistForm } from '../../organisms/WaitlistForm';
+import { CongratulationModal } from '../CongratulationModal';
 // import { SuccessActionTab } from '../../organisms/SideMenuContents/common/SuccessResult';
 import * as T from './../../../redux/types';
-import { WAITLISTFORM } from './../../../redux/types';
+import { OPENSUCCESSMODAL, WAITLISTFORM } from './../../../redux/types';
 const Wrapper = styled.section<any>`
   margin-top: 100px;
   ${({ opened }) => `
@@ -47,6 +48,7 @@ const Content = styled.section<any>`
   max-height: 80vh;
   max-width: 80vw;
   overflow: auto;
+  border-radius: 8px;
 `;
 export const Modal = (props: IComponent): JSX.Element => {
   const { closeModal } = useContext(ModalContext);
@@ -59,6 +61,8 @@ export const Modal = (props: IComponent): JSX.Element => {
         return (component = <h1>Hello WOrld</h1>);
       case WAITLISTFORM:
         return (component = <WaitlistForm data={modalState.data} />);
+      case OPENSUCCESSMODAL:
+        return (component = <CongratulationModal />);
       default:
         break;
     }

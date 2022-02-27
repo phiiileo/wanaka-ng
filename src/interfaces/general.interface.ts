@@ -150,6 +150,9 @@ export interface IDatePart {
   minutes: number;
   hours: number;
   days: number;
+  year: number;
+  month: string;
+  day: string;
 }
 export interface UploadImageProps {
   src?: string | any;

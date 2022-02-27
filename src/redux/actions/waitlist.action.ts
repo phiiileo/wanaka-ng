@@ -34,3 +34,33 @@ export const AddToWaitlistAction =
       cb(error);
     }
   };
+
+export const GetLeaderBoard =
+  (cb: any) =>
+  async (dispatch: IFunction): Promise<any> => {
+    // dispatch({
+    //   type: T.GETAPPREPORTSREQUEST,
+    // });
+    console.log('getting leader board');
+    const res = await api.GetRequest('leaderboard/details');
+    try {
+      if (res.status === 200 || res.status === 201 || res.status === 204) {
+        dispatch({
+          type: T.LEADERBOARDDATASUCCESSFUL,
+          payload: res.data,
+        });
+        cb(null, res.data);
+      } else {
+        const error: any = res?.data;
+        throwError(error?.message || 'Something went wrong with your request!');
+      }
+    } catch (error: any) {
+      console.error(error);
+      // dispatch({
+      //   type: T.GETAPPREPORTSFAILURE,
+      //   payload: error?.message,
+      //   target: type,
+      // });
+      cb(error);
+    }
+  };

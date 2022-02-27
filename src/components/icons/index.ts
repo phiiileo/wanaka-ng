@@ -68,6 +68,7 @@ export { default as FoodConverIcon } from './FoodCover.icon';
 export { default as SMGoogleIcon } from './SM.Goggle.icon';
 export { default as SMFacebookIcon } from './SM.FaceBook.icon';
 export { default as SMTwitterIcon } from './SM.Twitter.icon';
+export { default as CheckThinIcon } from './Check.Thin';
 export {
   FacebookSvg as FacebookIcon,
   TwitterSvg as TwitterIcon,

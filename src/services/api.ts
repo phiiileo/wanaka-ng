@@ -58,6 +58,7 @@ const create = () => {
 
   //Post Requests
   const PostRequest = (path: string, payload: any) => api.post(path, payload);
+  const GetRequest = (path: string) => api.get(path);
 
   // App Settings
 
@@ -69,6 +70,7 @@ const create = () => {
     deleteAuthToken,
     SearchData,
     PostRequest,
+    GetRequest,
     getReports,
     createUser,
   };

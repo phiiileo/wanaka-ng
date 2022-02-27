@@ -51,12 +51,20 @@ export const getDateParts = (from: string, to: string): IDatePart => {
   const minutes = Math.ceil(seconds / 60);
   const hours = Math.ceil(minutes / 60);
   const days = Math.ceil(hours / 24);
+  const year = currentDate.getFullYear();
+  const month_ = currentDate.getMonth();
+  const month = month_ < 10 ? `0${month_}` : month_.toString();
+  const day_ = currentDate.getDate();
+  const day = day_ < 10 ? `0${day_}` : day_.toString();
   return {
     milliseconds: diff,
     seconds,
     minutes,
     hours,
     days,
+    year,
+    month,
+    day,
   };
 };
 

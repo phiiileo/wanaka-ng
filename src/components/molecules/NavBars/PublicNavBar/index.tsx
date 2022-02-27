@@ -87,7 +87,14 @@ export const PublicNavBar = (): JSX.Element => {
   // };
   const navigatePage = (path: string): void => {
     const docEls = document.getElementsByClassName(path);
-    if (docEls.length < 1) return console.error('No document found with this classname');
+    if (docEls.length < 1) {
+      naviagate('/');
+      setTimeout(() => {
+        navigatePage(path);
+      }, 100);
+      return;
+      // console.error('No document found with this classname');
+    }
     const docEl = docEls[0];
     docEl.scrollIntoView();
   };
@@ -124,6 +131,9 @@ export const PublicNavBar = (): JSX.Element => {
         <MenuItem onClick={() => navigatePage('about-us')}>
           <Menu active={location.pathname == '/about'}>About Us</Menu>
         </MenuItem>
+        <MenuItem onClick={() => navigatePage('groceries-section')}>
+          <Menu active={location.pathname == '/groceries'}>Groceries</Menu>
+        </MenuItem>
         <MenuItem onClick={() => navigatePage('take-survey')}>
           <Menu active={location.pathname == '/about'}>Take Survey</Menu>
         </MenuItem>
@@ -144,7 +154,7 @@ export const PublicNavBar = (): JSX.Element => {
             </MenuItem> */}
             <MenuItem>
               <Button onClick={() => naviagate(RoutePaths.LEADERBOARD)} size="md" variant="primary" color="primary">
-                Leaderboard
+                Leaderboard / Referrals
               </Button>
             </MenuItem>
           </>
