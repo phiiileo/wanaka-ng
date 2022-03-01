@@ -32,19 +32,28 @@ const HeroInnerSection = styled.div<any>`
 `;
 const HeroHeaderTitle = styled.h1<any>`
   margin: 0px 0 20px 0;
-  font-size: 56px;
+  font-size: 32px;
+  text-align: center;
+  ${({ theme }) => theme.mq.md`
   padding-right: 5%;
+  text-align: left;
   line-height: 80px;
+  font-size: 56px;
+`}
 `;
 const HeroHeaderText = styled.p<any>`
-  margin: 30px 0 50px 0;
-  font-size: 16px;
-  line-height: 24px;
+  text-align: center;
   font-weight: 600;
-  padding-right: 40%;
+  margin: 30px 0 50px 0;
+  ${({ theme }) => theme.mq.md`
+    font-size: 16px;
+    line-height: 24px;
+    padding-right: 40%;
+    display: block;
+`};
 `;
 const HeaderImageSection = styled.div<any>`
-  display: none;
+  // display: none;
   ${({ theme }) => theme.mq.lg`
   display: block;
 `}
@@ -53,6 +62,14 @@ const HeaderTextSection = styled.div<any>`
   display: flex;
   justify-content: center;
   flex-direction: column;
+`;
+const ButtonWrapper = styled.div<any>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ${({ theme }) => theme.mq.md`
+  display: block;
+`}
 `;
 const HeroImage = styled.img<any>`
   width: 140%;
@@ -88,16 +105,16 @@ const HeroSection = (): JSX.Element => {
     <Wrapper className="home-page">
       <HeroInnerSection>
         <HeaderTextSection>
-          <HeroHeaderTitle>Fast Groceries and Healthy Recipees at the tap of a button.</HeroHeaderTitle>
+          <HeroHeaderTitle>Fast Groceries and Healthy Recipes at the tap of a button.</HeroHeaderTitle>
           <HeroHeaderText>
-            We’ll help you bring your favourite recipees to life. Join our waiting list and get a chance to win N5000
+            We’ll help you bring your favourite recipes to life. Join our waiting list and get a chance to win N5000
             worth of groceries
           </HeroHeaderText>
-          <div>
+          <ButtonWrapper>
             <Button onClick={() => initialSignup('')} size="md">
               Join Waiting List
             </Button>
-          </div>
+          </ButtonWrapper>
         </HeaderTextSection>
         <HeaderImageSection>
           <HeroImage src={heroimage} alt="hero image" />

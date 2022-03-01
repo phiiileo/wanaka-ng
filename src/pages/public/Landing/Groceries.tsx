@@ -67,7 +67,7 @@ const Groceries = (): JSX.Element => {
   ];
   return (
     <Wrapper className="groceries-section">
-      <SectionHeader>Groceries</SectionHeader>
+      <SectionHeader></SectionHeader>
       <SectionOne>
         {ListOne.map((x) => (
           <CardWrapper key={x.id} bgcolor={x.bgcolor}>

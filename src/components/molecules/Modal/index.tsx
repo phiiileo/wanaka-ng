@@ -29,7 +29,7 @@ const Wrapper = styled.section<any>`
 `;
 const CloseButton = styled.div<any>`
   position: fixed;
-  bottom: 50px;
+  top: 50px;
   right: 50px;
   // border: 1px solid red;
   color: red;
@@ -70,8 +70,8 @@ export const Modal = (props: IComponent): JSX.Element => {
   return (
     <Wrapper opened={modalState.isOpened}>
       <CloseButton onClick={closeModal}>
-        {/* <CloseIcon variant="error" />  */}
-        Close
+        <CloseIcon variant="error" />
+        {/* Close */}
       </CloseButton>
       <Content>
         {props.children}

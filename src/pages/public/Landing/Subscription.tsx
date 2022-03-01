@@ -27,7 +27,7 @@ const HeroHeaderText = styled.h3<any>`
 const Subscription = (): JSX.Element => {
   return (
     <Wrapper className="take-survey">
-      <HeroHeaderText>Now get extra point on the leaderboard by taking the survey</HeroHeaderText>
+      <HeroHeaderText>Now get extra points on the leaderboard by taking the survey</HeroHeaderText>
       <HeroInnerSection>
         <Button variant="outlined">Take Survey</Button>
       </HeroInnerSection>
