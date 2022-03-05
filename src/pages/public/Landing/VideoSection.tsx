@@ -39,7 +39,7 @@ const VideoSection = (): JSX.Element => {
   return (
     <Wrapper className="video-section">
       <VideoContainer>
-        <Iframe src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0&loop=1"></Iframe>
+        <Iframe src="https://www.youtube.com/embed/Xz962KmB5-4?controls=0&loop=1"></Iframe>
       </VideoContainer>
     </Wrapper>
   );
