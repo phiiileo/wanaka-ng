@@ -21,7 +21,7 @@ const Wrapper = styled.section<any>`
   top: 0;
   left: 0;
   right: 0;
-  z-index: 99;
+  z-index: 2;
   background-color: white;
   // width: 200%;
 `;
@@ -34,7 +34,7 @@ const MenuWrapper = styled.div<any>`
   right: 0;
   left: 0;
   text-align: center;
-  top: 80px;
+  top: 50px;
   z-index: 1;
   background-color: white;
   transition: all 0.3s ease-in-out;

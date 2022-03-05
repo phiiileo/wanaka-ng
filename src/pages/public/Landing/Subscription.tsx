@@ -25,11 +25,18 @@ const HeroHeaderText = styled.h3<any>`
   font-weight: 600;
 `;
 const Subscription = (): JSX.Element => {
+  const openNewPage = () => {
+    const _path = 'https://forms.gle/c9P1ZEu5hyi3fvJz5';
+    window.open(_path, '_blank');
+    // navigate(_path);
+  };
   return (
     <Wrapper className="take-survey">
       <HeroHeaderText>Now get extra points on the leaderboard by taking the survey</HeroHeaderText>
       <HeroInnerSection>
-        <Button variant="outlined">Take Survey</Button>
+        <Button onClick={() => openNewPage()} variant="outlined">
+          Take Survey
+        </Button>
       </HeroInnerSection>
     </Wrapper>
   );

@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
-import { useLocation } from 'react-router-dom';
-import { Button, SMGoogleIcon, SMTwitterIcon } from '../../../components';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { Button, InstagramIcon, SMGoogleIcon, SMInstagram, SMTwitterIcon } from '../../../components';
 import SMFacebook from '../../../components/icons/SM.FaceBook.icon';
 import { PublicNavBar } from '../../../components/molecules/NavBars';
 import { InitiateWaitlistSignupAction } from '../../../redux/actions';
@@ -116,6 +116,7 @@ const Referral = (): JSX.Element => {
   const rawData = useSelector((state: any) => state.appSettings.waitlist || {});
   console.log(rawData);
   const location = window.location;
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const initialSignup = () => {
     dispatch(InitiateWaitlistSignupAction({ code: null }));
@@ -128,6 +129,13 @@ const Referral = (): JSX.Element => {
     { id: 4, content: 'Develop a healthy eating habit and keep the body strong', icon: 'xxx' },
   ];
 
+  const openNewPage = (path: string) => {
+    let _path = 'htps://facebook.com';
+    if (path == 'twitter') _path = 'https://twitter.com/wanaka_ng?s=21';
+    if (path == 'instagram') _path = 'https://Instagram.com/wanaka_ng';
+    window.open(_path, '_blank');
+    // navigate(_path);
+  };
   function copyToClipboard(text: string) {
     // const elem = document.createElement('textarea');
     // elem.value = text;
@@ -167,13 +175,13 @@ const Referral = (): JSX.Element => {
                 </ReferralLinkTextButton>
               </ReferralLinkContainer>
               <ReferralLinkIconWrapper>
-                <div>
+                <div onClick={() => openNewPage('facebook')}>
                   <SMFacebook />
                 </div>
-                <div>
-                  <SMGoogleIcon />
+                <div onClick={() => openNewPage('instagram')}>
+                  <SMInstagram />
                 </div>
-                <div>
+                <div onClick={() => openNewPage('twitter')}>
                   <SMTwitterIcon />
                 </div>
               </ReferralLinkIconWrapper>
