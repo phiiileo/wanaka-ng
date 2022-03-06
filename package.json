@@ -1,84 +1,15 @@
 {
-  "name": "wanaka-waitlist",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@emotion/react": "^11.7.1",
-    "@emotion/styled": "^11.6.0",
-    "@testing-library/jest-dom": "^5.16.2",
-    "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.4.0",
-    "@types/node": "^16.11.24",
-    "@types/react": "^17.0.39",
-    "@types/react-dom": "^17.0.11",
-    "@types/react-notification-system": "^0.2.41",
-    "apisauce": "^2.1.5",
-    "axios": "^0.25.0",
-    "emotion-theming": "^11.0.0",
-    "formik": "^2.2.9",
-    "node-sass": "^7.0.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-helmet": "^6.1.0",
-    "react-notification-system": "^0.4.0",
-    "react-redux": "^7.2.6",
-    "react-responsive-carousel": "^3.2.22",
-    "react-router-dom": "^6.2.1",
-    "react-scripts": "5.0.0",
-    "react-spinners": "^0.11.0",
-    "redux": "^4.1.2",
-    "redux-persist": "^6.0.0",
-    "redux-thunk": "^2.4.1",
-    "typescript": "^4.5.5",
-    "web-vitals": "^2.1.4"
-  },
+  "name": "admin-dashboard",
+  "version": "1.0.01",
+  "description": "Admin dashboard for most Applications",
+  "main": "app.js",
+  "license": "MIT",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint \"**/*.{js,ts,tsx}\" --fix",
-    "lint:quiet": "eslint \"**/*.{js,ts,tsx}\" --quiet --fix"
+    "start": "node app.js",
+    "build:client": "rm -rf build && cd client && npm run build && mv dist ../build ",
+    "publish": "rm -rf build && cd client && yarn build && mv dist ../build && cd .. && git add . && git commit -am'added new changes and build client app' && git push origin2 main"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.14.2",
-    "@typescript-eslint/parser": "^4.14.2",
-    "eslint": "^7.19.0",
-    "eslint-config-prettier": "^7.2.0",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-react": "^7.22.0",
-    "husky": "^4.3.8",
-    "lint-staged": "^10.5.4",
-    "prettier": "^2.5.1",
-    "prettierrc": "^0.0.0-5"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "eslint --fix"
-    ]
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
