@@ -50,6 +50,7 @@ const HeroHeaderText = styled.p<any>`
     line-height: 24px;
     padding-right: 40%;
     display: block;
+    text-align: left;
 `};
 `;
 const HeaderImageSection = styled.div<any>`
