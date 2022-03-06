@@ -10,10 +10,10 @@ import { InitiateWaitlistSignupAction } from '../../../redux/actions';
 import heroimage from './../../../assets/images/hero-image.png';
 
 const Wrapper = styled.section`
-  min-height: 50vh;
+  min-height: 40vh;
   width: 100%;
   padding: 0% 8%;
-  margin: 50px auto 50px auto;
+  margin: 50px auto 0px auto;
 `;
 const ReferralSubtitle = styled.div<any>`
   text-align: center;

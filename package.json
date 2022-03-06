@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node app.js",
     "build:client": "rm -rf build && cd client && npm run build && mv dist ../build ",
-    "publish": "rm -rf build && cd client && yarn build && mv dist ../build && cd .. && git add . && git commit -am'added new changes and build client app' && git push origin2 main"
+    "publish": "rm -rf build && cd client && yarn build && mv build ../build && cd .. && git add . && git commit -am'added new changes and build client app' && git push origin2 main"
   },
   "dependencies": {
     "express": "^4.17.1"

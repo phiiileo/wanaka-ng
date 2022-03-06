@@ -10,7 +10,7 @@ import { InitiateWaitlistSignupAction } from '../../../redux/actions';
 import heroimage from './../../../assets/images/hero-image.png';
 
 const Wrapper = styled.section`
-  min-height: 50vh;
+  min-height: 40vh;
   width: 100%;
   padding: 0% 8%;
   margin: 10px auto 20px auto;

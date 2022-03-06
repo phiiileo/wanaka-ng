@@ -17,7 +17,7 @@ const Wrapper = styled.section<any>`
   min-height: 50vh;
   background-color: #effff1;
   ${({ theme }) => theme.mq.lg`
-  margin: 100px 0 0 0;
+  margin: 50px 0 0 0;
   min-height: 70vh;
 `}
 `;

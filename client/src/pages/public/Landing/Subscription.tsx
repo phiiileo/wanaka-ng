@@ -11,7 +11,7 @@ const Wrapper = styled.section`
   width: 100%;
   color: #fff;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 0px;
 `;
 
 const HeroInnerSection = styled.div<any>`
